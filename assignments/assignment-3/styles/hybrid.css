@@ -1,0 +1,683 @@
+/* ===============================================
+   HYBRID CSS SOLUTION - Portfolio Assignment
+   Author: Lakshyaraj Bhati
+   Assignment: CSC317 Assignment 3
+   
+   This file combines the best elements from:
+   - styles.css (Hand-written)
+   - ai-1.css (AI-generated with text prompt)
+   - ai-2.css (AI-generated with image + text prompt)
+   =============================================== */
+
+/* CSS Variables - Combined from all sources with optimizations */
+:root {
+    /* Color Scheme - From styles.css with AI-1 enhancements */
+    --primary-color: #2a5885;
+    --primary-hover: #1e3f5c;
+    --primary-light: #4a7ba7;
+    --secondary-color: #f0f0f0;
+    --background-color: #f9f9f9;
+    --text-primary: #333;
+    --text-secondary: #666;
+    --text-tertiary: #999;
+    --border-color: #ddd;
+    --white: #ffffff;
+    --black: #000000;
+    
+    /* Shadow System - From AI-1 with improvements */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Typography - From AI-2 with hand-written font selections */
+    --font-primary: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Spacing Scale - From AI-2 (most comprehensive) */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    
+    /* Border Radius - From AI-1 */
+    --radius-sm: 0.375rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-full: 50%;
+    
+    /* Transitions - From styles.css with AI enhancements */
+    --transition-fast: 0.15s ease-out;
+    --transition-medium: 0.3s ease-out;
+    --transition-slow: 0.5s ease-out;
+    
+    /* Layout - From AI-2 */
+    --container-max-width: 1200px;
+}
+
+/* Reset and Base Styles - From AI-2 (most comprehensive) */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--white);
+    padding: var(--space-4);
+}
+
+/* Container - From AI-2 with hand-written max-width */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+}
+
+/* Typography - Combined from all sources */
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: clamp(2.5rem, 5vw, 4rem); /* From AI-2 */
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-8);
+    position: relative; /* From AI-1 for decorative elements */
+}
+
+/* Decorative line under h1 - From AI-1 */
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+    border-radius: var(--radius-full);
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color); /* From styles.css */
+    padding-bottom: var(--space-2);
+    margin-bottom: var(--space-6);
+    font-size: clamp(1.75rem, 3vw, 2.25rem); /* From AI-1 */
+    font-weight: var(--font-weight-medium);
+}
+
+h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--space-4);
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-medium);
+}
+
+p {
+    margin-bottom: var(--space-4);
+    color: var(--text-secondary); /* From AI-2 */
+    max-width: 65ch; /* From AI-2 for better readability */
+}
+
+/* Links - From AI-2 with styles.css hover enhancements */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+a:hover, a:focus {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px solid var(--primary-color); /* From AI-2 accessibility */
+    outline-offset: 2px;
+}
+
+/* Navigation - Simplified for better performance */
+nav {
+    text-align: center;
+    margin: var(--space-6) 0;
+    background-color: var(--white); /* Solid background instead of blur */
+    padding: var(--space-4);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: box-shadow var(--transition-fast); /* Simplified transition */
+}
+
+nav:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+nav a {
+    margin: 0 var(--space-4);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast); /* Faster transition */
+    display: inline-block;
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.875rem;
+    position: relative;
+}
+
+/* Simplified hover effect - no complex animations */
+nav a:hover, nav a:focus {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    transform: translateY(-1px); /* Subtle lift effect */
+}
+
+nav a:active {
+    transform: translateY(0); /* Quick feedback on click */
+}
+
+/* Section Styling - Combined approach */
+section {
+    margin-bottom: var(--space-8);
+    padding: var(--space-6);
+    background-color: var(--background-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm); /* From AI-1 */
+    transition: all var(--transition-medium);
+    border: 1px solid rgba(0, 0, 0, 0.05); /* From AI-2 */
+}
+
+/* Enhanced hover effect - From AI-1 */
+section:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+/* Profile Section - From styles.css with AI enhancements */
+.profile-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+}
+
+.profile-image-container {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.profile-image {
+    max-width: 200px;
+    width: 100%;
+    border-radius: var(--radius-full);
+    box-shadow: var(--shadow-xl);
+    transition: transform var(--transition-medium);
+    border: 4px solid var(--white); /* From AI-1 */
+    position: relative;
+}
+
+/* Advanced profile image effect - From AI-1 */
+.profile-image::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: var(--radius-full);
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--transition-medium);
+}
+
+.profile-image:hover {
+    transform: scale(1.05) rotate(2deg); /* From AI-1 */
+}
+
+.profile-image:hover::before {
+    opacity: 1;
+}
+
+.profile-content {
+    flex: 2;
+    min-width: 300px;
+}
+
+/* Table Styling - Combined from all sources */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-6) 0;
+    border-radius: var(--radius-lg); /* From AI-1 */
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+thead {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); /* From AI-1 */
+    color: var(--white);
+}
+
+th, td {
+    padding: var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.05em; /* From AI-1 */
+}
+
+tbody tr {
+    transition: all var(--transition-fast);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(240, 240, 240, 0.5); /* From styles.css */
+}
+
+/* Enhanced table hover - From AI-1 */
+tbody tr:hover {
+    background-color: var(--primary-light);
+    color: var(--white);
+    transform: scale(1.01);
+    box-shadow: var(--shadow-md);
+}
+
+/* Project Cards - Combined approach */
+.project-container {
+    margin-bottom: var(--space-8);
+    padding: var(--space-6);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--white) 0%, var(--background-color) 100%); /* From styles.css */
+    transition: all var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top border accent - From AI-1 */
+.project-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+}
+
+.project-container:hover {
+    transform: translateY(-8px); /* From AI-1 */
+    box-shadow: var(--shadow-xl);
+}
+
+.project-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+}
+
+.project-description {
+    flex: 1;
+    min-width: 300px;
+}
+
+.project-preview {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* Enhanced iframe styling - From AI-1 */
+iframe {
+    width: 100%;
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-medium);
+}
+
+iframe:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Form Styling - Combined from all sources */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: var(--space-5);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--space-2);
+    font-weight: var(--font-weight-medium);
+    color: var(--primary-color);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: var(--space-4);
+    border: 2px solid var(--border-color); /* From AI-1 */
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all var(--transition-medium);
+    background: var(--background-color); /* From AI-1 */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: var(--white); /* From AI-1 */
+    box-shadow: 0 0 0 3px rgba(42, 88, 133, 0.1);
+    transform: translateY(-2px); /* From AI-1 */
+}
+
+/* Enhanced button - From AI-1 with styles.css improvements */
+button[type="submit"] {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); /* From AI-1 */
+    color: var(--white);
+    padding: var(--space-4) var(--space-8);
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-medium);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase; /* From AI-2 */
+    letter-spacing: 0.05em; /* From AI-2 */
+}
+
+/* Button shimmer effect - From AI-1 */
+button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left var(--transition-medium);
+}
+
+button[type="submit"]:hover::before {
+    left: 100%;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Lists - From styles.css with AI improvements */
+ul, ol {
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+}
+
+li {
+    margin-bottom: var(--space-2);
+    color: var(--text-secondary); /* From AI-2 */
+}
+
+li::marker {
+    color: var(--primary-color); /* From AI-1 */
+}
+
+/* Media Elements - From AI-2 */
+audio, video {
+    width: 100%;
+    border-radius: var(--radius-md);
+    margin: var(--space-4) 0;
+}
+
+/* Footer - Combined approach */
+footer {
+    text-align: center;
+    padding: var(--space-8);
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); /* From AI-1 */
+    color: var(--white);
+    border-radius: var(--radius-lg);
+    margin-top: var(--space-12);
+    box-shadow: var(--shadow-lg);
+}
+
+footer p {
+    margin-bottom: var(--space-2);
+    opacity: 0.9; /* From AI-1 */
+}
+
+/* Responsive Design - Combined from all sources */
+@media (max-width: 768px) {
+    body {
+        padding: var(--space-2);
+    }
+    
+    .container {
+        padding: 0 var(--space-3);
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    nav a {
+        display: block;
+        margin: var(--space-2) 0;
+        padding: var(--space-2) var(--space-4);
+    }
+    
+    .profile-container {
+        flex-direction: column;
+    }
+    
+    .project-content {
+        flex-direction: column;
+    }
+    
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    section {
+        padding: var(--space-4);
+    }
+    
+    .profile-image {
+        max-width: 150px;
+    }
+    
+    th, td {
+        padding: var(--space-2);
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: var(--space-1);
+    }
+    
+    section {
+        padding: var(--space-3);
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .profile-image {
+        max-width: 120px;
+    }
+    
+    table {
+        font-size: 0.8rem;
+    }
+    
+    th, td {
+        padding: var(--space-1);
+    }
+}
+
+/* Large screens optimization - From AI-2 */
+@media (min-width: 1200px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--space-8);
+    }
+}
+
+/* Animations - From styles.css with AI-1 improvements */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.6s ease-out; /* From AI-1 */
+}
+
+/* Accessibility - From AI-2 */
+*:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Reduced motion support - From AI-1 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark mode support - Combined from AI sources */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1a1a;
+        --text-primary: #e0e0e0;
+        --text-secondary: #cccccc;
+        --secondary-color: #2a2a2a;
+        --border-color: #404040;
+        --white: #111111;
+    }
+    
+    body {
+        background-color: var(--white);
+    }
+    
+    section {
+        background-color: var(--background-color);
+    }
+    
+    nav {
+        background-color: var(--white);
+    }
+}
+
+/* Print styles - From AI-2 */
+@media print {
+    nav, iframe, audio, video {
+        display: none;
+    }
+    
+    body {
+        padding: 0;
+    }
+    
+    section {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--border-color);
+    }
+    
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Utility Classes - From AI-2 */
+.text-center {
+    text-align: center;
+}
+
+.text-accent {
+    color: var(--primary-color);
+}
+
+.font-light {
+    font-weight: var(--font-weight-light);
+}
+
+.font-medium {
+    font-weight: var(--font-weight-medium);
+}
+
+.font-semibold {
+    font-weight: var(--font-weight-semibold);
+} 
