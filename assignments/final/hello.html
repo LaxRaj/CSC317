@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Practice - Part 0</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+        #output {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            min-height: 100px;
+            font-family: 'Courier New', monospace;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #fff;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Week 0 Practice</h1>
+        <p>This page demonstrates Part 0 of Assignment 4: Environment Setup</p>
+        
+        <button id="greetButton">Say Hello to JavaScript!</button>
+        <button id="timeButton">Show Current Time</button>
+        <button id="devButton">Show Developer Info</button>
+        <button id="techButton">List Technologies</button>
+        
+        <div id="output">
+            <p>Click any button above to see JavaScript in action!</p>
+        </div>
+
+        <a href="index.html" class="nav-link">← Back to Portfolio</a>
+        <a href="calculator.html" class="nav-link">View Calculator →</a>
+    </div>
+    
+    <script src="scripts/hello.js"></script>
+    <script>
+        const output = document.getElementById("output");
+        
+        document.getElementById("greetButton").addEventListener("click", function() {
+            output.innerHTML = `<p><strong>Greeting:</strong> ${createMessage("JavaScript")}</p>`;
+        });
+        
+        document.getElementById("timeButton").addEventListener("click", function() {
+            output.innerHTML = `<p><strong>Time:</strong> ${getCurrentDateTime()}</p>`;
+        });
+        
+        document.getElementById("devButton").addEventListener("click", function() {
+            output.innerHTML = `<p><strong>Developer Info:</strong> ${developer.getInfo()}</p>`;
+        });
+        
+        document.getElementById("techButton").addEventListener("click", function() {
+            const technologies = ["HTML", "CSS", "JavaScript", "Node.js"];
+            const [first, second, ...rest] = technologies;
+            output.innerHTML = `
+                <p><strong>Technologies I'm Learning:</strong></p>
+                <p>Primary: ${first}, ${second}</p>
+                <p>Additional: ${rest.join(", ")}</p>
+            `;
+        });
+    </script>
+</body>
+</html> 

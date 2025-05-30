@@ -1,17 +1,81 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-
-    <title>CSC317</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshyaraj Bhati - CSC317 Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            margin: 10px;
+            font-weight: 500;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .description {
+            color: #555;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+    </style>
 </head>
-
 <body>
-
-    <h1>Hello CSC317</h1>
-
+    <div class="container">
+        <h1>Lakshyaraj Bhati</h1>
+        <div class="subtitle">CSC317 - Web Software Development</div>
+        
+        <div class="description">
+            Welcome to my CSC317 portfolio! This collection showcases my journey through web development, 
+            culminating in a collaborative Recipe Sharing Platform and various individual projects 
+            demonstrating full-stack development skills.
+        </div>
+        
+        <a href="assignments/final/" class="btn">View Final Portfolio</a>
+        
+        <div class="description" style="margin-top: 30px; font-size: 0.9em;">
+            <strong>Featured Projects:</strong><br>
+            • Recipe Sharing Platform (Group Project)<br>
+            • JavaScript Calculator<br>
+            • Netflix Clone Application<br>
+            • Social Media Platform
+        </div>
+    </div>
 </body>
-
 </html>

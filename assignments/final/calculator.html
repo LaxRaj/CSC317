@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Calculator</title>
+  <link rel="stylesheet" href="styles/calculator.css">
+</head>
+<body>
+  <!-- Back to Portfolio Link -->
+  <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
+    <a href="index.html" style="color: white; text-decoration: none; background: rgba(0,0,0,0.5); padding: 10px 15px; border-radius: 5px;">← Back to Portfolio</a>
+  </div>
+
+  <div class="calculator-container">
+    <div class="calculator">
+      <div class="calc-display">0</div>
+      <div class="theme-switcher">
+        <button class="theme-toggle" id="theme-toggle">
+          <span class="theme-icon light">☀️</span>
+          <span class="theme-icon dark">🌙</span>
+        </button>
+      </div>
+      <div class="calc-keypad">
+        <div class="function-keys">
+          <button class="calc-button function" data-value="clear">AC</button>
+          <button class="calc-button function" data-value="sign">+/-</button>
+          <button class="calc-button function" data-value="percent">%</button>
+          <button class="calc-button operator" data-value="/">/</button>
+        </div>
+        <div class="calc-row">
+          <button class="calc-button" data-value="7">7</button>
+          <button class="calc-button" data-value="8">8</button>
+          <button class="calc-button" data-value="9">9</button>
+          <button class="calc-button operator" data-value="*">×</button>
+        </div>
+        <div class="calc-row">
+          <button class="calc-button" data-value="4">4</button>
+          <button class="calc-button" data-value="5">5</button>
+          <button class="calc-button" data-value="6">6</button>
+          <button class="calc-button operator" data-value="-">-</button>
+        </div>
+        <div class="calc-row">
+          <button class="calc-button" data-value="1">1</button>
+          <button class="calc-button" data-value="2">2</button>
+          <button class="calc-button" data-value="3">3</button>
+          <button class="calc-button operator" data-value="+">+</button>
+        </div>
+        <div class="calc-row">
+          <button class="calc-button double-width" data-value="0">0</button>
+          <button class="calc-button" data-value=".">.</button>
+          <button class="calc-button operator" data-value="=">=</button>
+        </div>
+      </div>
+      <div class="history-container">
+        <div class="history-title">History</div>
+      </div>
+    </div>
+  </div>
+  <script src="scripts/calculator.js"></script>
+</body>
+</html>
